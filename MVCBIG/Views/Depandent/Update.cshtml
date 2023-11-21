@@ -1,0 +1,30 @@
+﻿@model Depandent
+
+<h2>Edit Project</h2>
+
+<form asp-action="SaveUpdate">
+    <input type="hidden" asp-for="ESSN" />
+    <div class="form-group">
+        <label asp-for="DEPENDENTNAME">DEPENDENTNAME:</label>
+        <input asp-for="DEPENDENTNAME" class="form-control" />
+        <span asp-validation-for="DEPENDENTNAME" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="BDATA">Location:</label>
+        <input asp-for="BDATA" class="form-control" />
+        <span asp-validation-for="BDATA" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="RELATIONSHIP">RELATIONSHIP:</label>
+        <input asp-for="RELATIONSHIP" class="form-control" />
+        <span asp-validation-for="RELATIONSHIP" class="text-danger"></span>
+    </div>
+     <div class="form-group">
+        <label asp-for="Employee">Employee:</label>
+        <input asp-for="Employee" class="form-control" />
+        <span asp-validation-for="Employee" class="text-danger"></span>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Save Changes</button>
+    <a asp-action="Index" class="btn btn-secondary">Cancel</a>
+</form>

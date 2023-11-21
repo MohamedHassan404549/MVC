@@ -1,0 +1,26 @@
+﻿@model Project
+
+@{
+    ViewData["Title"] = "New";
+}
+
+<h1>New</h1>
+
+@using (Html.BeginForm("SaveNew", "Project", FormMethod.Post))
+{
+    <div class="form-group">
+        @Html.LabelFor(model => model.PName, new { @class = "control-label" })
+        @Html.TextBoxFor(model => model.PName, new { @class = "form-control" })
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(model => model.PLocation, new { @class = "control-label" })
+        @Html.TextBoxFor(model => model.PLocation, new { @class = "form-control" })
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(model => model.DNUM, new { @class = "control-label" })
+        @Html.TextBoxFor(model => model.DNUM, new { @class = "form-control" })
+    </div>
+
+    <br />
+    <button type="submit" class="btn btn-primary">Submit</button>
+}

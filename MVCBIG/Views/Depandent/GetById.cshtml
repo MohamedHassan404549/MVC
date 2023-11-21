@@ -1,0 +1,65 @@
+﻿@model Depandent
+
+<h1 style="color: #1a73e8; text-align: center;">Dependent Details - @Model.DEPENDENTNAME</h1>
+
+<style>
+    .custom-table {
+        background-color: #fcba03;
+        width: 80%;
+        margin: auto;
+        border-collapse: collapse;
+        border: 1px solid #ccc;
+    }
+
+        .custom-table th, .custom-table td {
+            padding: 10px;
+            border: 1px solid #ccc;
+        }
+
+        .custom-table th {
+            background-color: #f2f2f2;
+            font-weight: bold;
+            text-align: left;
+        }
+
+        .custom-table td {
+            text-align: left;
+        }
+
+    .back-link {
+        display: block;
+        margin-top: 20px;
+        text-align: center;
+        font-size: 16px;
+        color: #1a73e8;
+        text-decoration: none;
+    }
+
+        .back-link:hover {
+            text-decoration: underline;
+        }
+</style>
+
+<table class="table table-bordered custom-table">
+    <thead>
+        <tr>
+            <th>ESSN</th>
+            <th>Dependent Name</th>
+            <th>Birth Date</th>
+            <th>Relationship</th>
+            <th>Employee SSN</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>@Model.ESSN</td>
+            <td>@Model.DEPENDENTNAME</td>
+            <td>@Model.BDATA</td>
+            <td>@Model.RELATIONSHIP</td>
+            <th>@Model.ESSN</th>
+           
+        </tr>
+    </tbody>
+</table>
+
+<a href="/Depandent/Index" class="back-link">Back to Dependent List</a>

@@ -1,0 +1,37 @@
+﻿@model Dept_Loc
+<h1>GetById</h1>
+
+
+<style>
+
+    .custom-table {
+        background-color: #f9f9f9;
+    }
+</style>
+
+
+<table class="table table-bordered custom-table">
+    <thead>
+        <tr>
+            <th>DNUMDER</th>
+            <th>Location</th>
+            <th>Department</th>
+
+
+        </tr>
+    </thead>
+    <tbody>
+
+        <tr>
+            <td>@Model.Dnumber</td>
+            <td>@Model.Location</td>
+            <td>@Model.Dnumber</td>
+
+
+        </tr>
+
+    </tbody>
+</table>
+
+
+<a href="/Dept_Loc/Index">Back to list</a>

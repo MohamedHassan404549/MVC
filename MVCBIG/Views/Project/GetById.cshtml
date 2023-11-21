@@ -1,0 +1,39 @@
+﻿@model Project
+<h1>GetById</h1>
+
+
+<style>
+
+    .custom-table {
+        background-color: #f9f9f9;
+    }
+</style>
+
+
+<table class="table table-bordered custom-table">
+    <thead>
+        <tr>
+            <th>PNUMBER</th>
+            <th>PNAME</th>
+            <th>PLocation</th>
+            <th>DNUM</th>
+
+
+        </tr>
+    </thead>
+    <tbody>
+
+        <tr>
+            <th>@Model.PNumber</th>
+            <th>@Model.PName</th>
+            <th>@Model.PLocation</th>
+            <th>@Model.DNUM</th>
+
+
+        </tr>
+
+    </tbody>
+</table>
+
+
+<a href="/Project/Index">Back to list</a>

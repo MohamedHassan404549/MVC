@@ -1,0 +1,116 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee Management</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            background-color: black;
+            font-family: 'Roboto', sans-serif;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 5px;
+            background-color: #fff;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .btn-new {
+            display: block;
+            margin: 20px auto;
+            text-align: center;
+        }
+
+        .btn-animate {
+            transition: transform 0.2s;
+        }
+
+            .btn-animate:hover {
+                transform: scale(1.05);
+            }
+
+        .custom-table th,
+        .custom-table td {
+            vertical-align: middle;
+        }
+
+        .actions {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+        }
+
+            .actions a {
+                text-decoration: solid;
+            }
+
+        .btn-details {
+            background-color: #17a2b8;
+            color: #fff;
+            border: none;
+            padding: 5px 10px;
+            border-radius: 5px;
+        }
+
+        .btn-update {
+            background-color: #28a745;
+            color: #fff;
+            border: none;
+            padding: 5px 10px;
+            border-radius: 5px;
+        }
+
+        .btn-delete {
+            background-color: #dc3545;
+            color: #fff;
+            border: none;
+            padding: 5px 10px;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="text-center">Employee Management</h1>
+        <a href="New" class="btn btn-outline-success btn-new">New Employee</a>
+        <table class="table table-bordered custom-table">
+            <thead>
+                <tr>
+                    <th>SSN</th>
+                    <th>Full Name</th>
+                    <th>Date</th>
+                    <th>Address</th>
+                    <th>Salary</th>
+                    <th>Supervisor</th>
+                    <th>Department Number</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Replace this with your loop for data rendering -->
+                @foreach (Employee item in Model)
+                {
+                    <tr>
+                        <td>@item.SSN</td>
+                        <td>@item.FullName</td>
+                        <td>@item.Date</td>
+                        <td>@item.Address</td>
+                        <td>@item.Salary</td>
+                        <td>@item.Supervisor</td>
+                        <td>@item.Dnumber</td>
+                        <td class="actions">
+                            <a href="/Employee/GetById/@item.SSN" class="btn btn-outline-info btn-animate">Details</a>
+                            <a href="/Employee/Update/@item.SSN" class="btn btn-outline-secondary btn-animate">Update</a>
+                            <a href="/Employee/Delete/@item.SSN" class="btn btn-outline-danger btn-animate">Delete</a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

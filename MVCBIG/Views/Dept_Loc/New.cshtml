@@ -1,0 +1,26 @@
+﻿@model Dept_Loc
+
+@{
+    ViewData["Title"] = "New";
+}
+
+<h1>New</h1>
+
+<form method="post" action="/Dept_Loc/SaveNew">
+    <div class="form-group">
+        <label for="exampleInputEmail1">DEPENDENT Number</label>
+        <input type="text" value="@Model?.Dnumber" class="form-control" name="Dnumber" />
+    </div>
+    <div class="form-group">
+        <label for="exampleInputEmail1">Location</label>
+        <input type="text" value="@Model?.Location" class="form-control" name="Location" />
+    </div>
+    <div class="form-group">
+        <label for="exampleInputEmail1">Department</label>
+        <input type="text" value="@Model?.Dnumber" class="form-control" name="Dnumber" />
+    </div>
+   
+
+    <br />
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>

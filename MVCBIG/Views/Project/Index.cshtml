@@ -1,0 +1,79 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Management</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            background-color: #f9f9f9;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .custom-table {
+            background-color: #ffffff;
+            border: 1px solid #ccc;
+            width: 100%;
+            margin-top: 20px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .btn-new {
+            display: block;
+            margin: 10px auto;
+            text-align: center;
+        }
+
+        .btn-animate {
+            transition: transform 0.2s;
+        }
+
+            .btn-animate:hover {
+                transform: scale(1.05);
+            }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="text-center">Project Management</h1>
+        <a href="#" class="btn btn-outline-success btn-new">New Project</a>
+        <table class="table table-bordered custom-table">
+            <thead>
+                <tr>
+                    <th>PNUMBER</th>
+                    <th>PNAME</th>
+                    <th>PLocation</th>
+                    <th>DNUM</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Replace this with your loop for data rendering -->
+                @foreach (Project item in Model)
+                {
+                    <tr>
+                        <td>@item.PNumber</td>
+                        <td>@item.PName</td>
+                        <td>@item.PLocation</td>
+                        <td>@item.DNUM</td>
+                        <td>
+                            <a href="/Project/GetById/@item.PNumber" class="btn btn-outline-info btn-animate">Details</a>
+                            <a href="/Project/Update/@item.PNumber" class="btn btn-outline-secondary btn-animate">Edit</a>
+                            <a href="/Project/Delete/@item.PNumber" class="btn btn-outline-danger btn-animate">Delete</a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+
+    <!-- Optional: Include Bootstrap JS if needed -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
